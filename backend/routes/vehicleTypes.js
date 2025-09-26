@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const VehicleType = require("../models/VehicleType");
+const VehicleType = require("../models/VehicleType.js");
 
 router.get("/", async (req, res) => {
   try {
     const { wheels } = req.query;
 
     if (!wheels) {
-      return res.status(400).json({ error: "wheels query parameter is required" });
+      return ;
     }
 
     const vehicleTypes = await VehicleType.findAll({

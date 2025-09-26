@@ -1,6 +1,7 @@
 import React from "react";
 import MultiStepForm from "./assets/components/MultiStepForm";
 import { Container, Typography, Box } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

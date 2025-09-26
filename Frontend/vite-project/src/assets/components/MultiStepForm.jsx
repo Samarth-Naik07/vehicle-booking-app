@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 import Step1Name from "./name.jsx";
 import Step2Wheels from "./wheels.jsx";
 import Step3VehicleType from "./VehicleType.jsx";
@@ -7,6 +8,7 @@ import Step5DateRange from "./DateRange.jsx";
 import api from "../api/api.jsx";
 
 const MultiStepForm = () => {
+  const navigate = useNavigate(); 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -45,10 +47,14 @@ const MultiStepForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
-    api.post("/bookings", formData)
-      .then((res) => alert(res.data.message))
-      .catch((err) => alert(err.response.data.error));
+  const handleSubmit = async () => {
+    try {
+      const res = await api.post("/bookings", formData);
+      alert(res.data.message);
+      navigate("/")
+    } catch (err) {
+      alert(err.response?.data?.error || "Booking failed");
+    }
   };
 
   switch (step) {

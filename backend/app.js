@@ -16,6 +16,11 @@ app.use("/vehicles", vehicleRoutes);
 app.use("/bookings", bookingRoutes);
 
 const PORT = process.env.PORT || 5000;
+sequelize.sync({ alter: true }) // safe: creates missing tables or updates structure
+  .then(() => {
+    console.log("✅ All tables are synced and Booking table is ready!");
+  })
+  .catch((err) => console.error("❌ Table sync failed:", err));
 
 sequelize.authenticate()
   .then(() => console.log("Database connected"))
