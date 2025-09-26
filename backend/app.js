@@ -3,9 +3,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const sequelize = require("./config/db");
 
-const vehicleTypeRoutes = require("./routes/vehicleTypes");
-const vehicleRoutes = require("./routes/vehicles");
-const bookingRoutes = require("./routes/bookings");
+const vehicleTypeRoutes = require("./routes/vehicleTypes.js");
+const vehicleRoutes = require("./routes/vehicles.js");
+const bookingRoutes = require("./routes/bookings.js");
 
 const app = express();
 app.use(cors());
