@@ -3,9 +3,22 @@ const router = express.Router();
 const VehicleType = require("../models/VehicleType");
 
 router.get("/", async (req, res) => {
-  const wheels = req.query.wheels;
-  const types = await VehicleType.findAll({ where: { wheels } });
-  res.json(types);
+  try {
+    const { wheels } = req.query;
+
+    if (!wheels) {
+      return res.status(400).json({ error: "wheels query parameter is required" });
+    }
+
+    const vehicleTypes = await VehicleType.findAll({
+      where: { wheels: Number(wheels) }, // ensure number
+    });
+
+    res.json(vehicleTypes);
+  } catch (err) {
+    console.error("Error fetching vehicle types:", err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 module.exports = router;
