@@ -1,9 +1,1 @@
-{
-  "development": {
-    "username": "root",
-    "password": "samarth",
-    "database": "vehicle_booking",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}
+
