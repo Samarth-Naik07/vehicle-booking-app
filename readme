@@ -1,4 +1,4 @@
-# Vehicle Booking App 🚗🏍️
+## Vehicle Booking App 🚗🏍️
 
 A full-stack vehicle booking system built with **React (Vite)** on the frontend, **Node.js + Express** for the backend, and **MySQL + Sequelize** as the database ORM.
 
