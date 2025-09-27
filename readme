@@ -10,6 +10,7 @@ vehicle-booking-app/
 │── backend/ 
 
 │── frontend/Vite-Project
+
 1. Navigate to backend folder:
    ```bash
    cd backend
@@ -18,24 +19,26 @@ Install dependencies:
 
 ```bash
 
-npm install
+ npm install
 ```
+
 Configure database:
 
-Open config/config.json
+-Open config/config.json
 
-Update your MySQL username, password, and database.
+-Update your MySQL username, password, and database.
 
 Run migrations (create tables):
 
 ```bash
-npx sequelize-cli db:migrate
+ npx sequelize-cli db:migrate
 ```
 Run seeders (insert sample vehicles & types):
 
 ```bash
 
 npx sequelize-cli db:seed:all
+
 ```
 Start backend server:
 
@@ -44,15 +47,20 @@ Start backend server:
 node app.js
 
 ```
+
+
 ## frontend
+
 Navigate to frontend folder:
 ```bash
+
 cd frontend/vite-project
+
 ```
 
 
 Install dependencies:
-```
+```bash
 npm install
 npm install react-router-dom @mui/material @emotion/react @emotion/styled
 
@@ -60,6 +68,8 @@ npm install react-router-dom @mui/material @emotion/react @emotion/styled
 
 
 Start development server:
+
 ```
 npm run dev
+
 ```
